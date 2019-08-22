@@ -32,7 +32,7 @@ class HomeApp extends StatefulWidget {
 class _HomeAppState extends State<HomeApp> with Validation {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
-  final formKey = GlobalKey<FormFieldState>();
+  final formKey = GlobalKey<FormState>();
 
   String username = "";
   String password = "";
@@ -103,6 +103,7 @@ class _HomeAppState extends State<HomeApp> with Validation {
     return TextFormField(
         obscureText: false,
         keyboardType: TextInputType.numberWithOptions(),
+        maxLength: 6,
         decoration: InputDecoration(
             labelText: "Input Password",
             contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
