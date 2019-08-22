@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/secondpage.dart';
 import 'package:flutter_app/vali/validation';
 
 void main() {
@@ -128,6 +129,8 @@ class _HomeAppState extends State<HomeApp> with Validation {
 
             print("Username : $username");
             print("Password : $password");
+
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPageApp()));
           }
         },
         child: Text("Login",
