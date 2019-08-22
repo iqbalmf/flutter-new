@@ -1,0 +1,15 @@
+class Validation {
+  String validatePassword(String value) {
+    if (value.length < 6) {
+      return 'Minimum Password 6';
+    }
+    return null;
+  }
+
+  String validateName(String value) {
+    if (value.isEmpty) {
+      return 'Username cannot blank';
+    }
+    return null;
+  }
+}
