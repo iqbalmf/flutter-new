@@ -101,7 +101,7 @@ class _HomeAppState extends State<HomeApp> with Validation {
 
   Widget passwordField() {
     return TextFormField(
-        obscureText: false,
+        obscureText: true,
         keyboardType: TextInputType.numberWithOptions(),
         maxLength: 6,
         decoration: InputDecoration(
