@@ -1,14 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_app/model/category.dart' as prefix0;
+import 'package:flutter_app/model/category.dart' as categoryMeal;
 
 class CategoryView extends StatelessWidget {
-  final List<prefix0.Category> category;
+  final List<categoryMeal.Category> category;
 
   CategoryView({Key key, this.category}) : super(key: key);
 
-  Card getCategoryList(prefix0.Category category) {
+  Card getCategoryList(categoryMeal.Category category) {
     return new Card(
       elevation: 1.5,
       margin: EdgeInsets.all(10.0),
@@ -36,6 +36,8 @@ class CategoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return new GridView.count(
         crossAxisCount: 3,
+        physics: ScrollPhysics(), // to disable GridView's scrolling
+        shrinkWrap: true,
         children: List.generate(category.length, (index) {
           return getCategoryList(category[index]);
         }));
