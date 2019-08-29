@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_app/screen/food.dart';
 import 'package:flutter_app/model/latestmeal.dart' as latestMeal;
 
 class LatestView extends StatelessWidget {
@@ -35,7 +36,18 @@ class LatestView extends StatelessWidget {
         shrinkWrap: true,
         itemCount: latest.length,
         itemBuilder: (context, index) {
-          return getLatestView(latest[index]);
+          return GestureDetector(
+              onTap: () {
+                print(latest[index].mealName);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            FoodApp(categoryName: latest[index].mealName,)
+                    ));
+              },
+              child: getLatestView(latest[index])
+          );
         });
   }
 }

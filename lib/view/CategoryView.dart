@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_app/model/category.dart' as categoryMeal;
+import 'package:flutter_app/screen/foodlist.dart';
 
 class CategoryView extends StatelessWidget {
   final List<categoryMeal.Category> category;
@@ -19,13 +20,12 @@ class CategoryView extends StatelessWidget {
           Image.network(
             category.imageCategory,
           ),
-          SizedBox(height: 15.0,),
+          SizedBox(
+            height: 15.0,
+          ),
           Text(
             category.nameCategory,
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold
-            ),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ],
       ),
@@ -39,7 +39,17 @@ class CategoryView extends StatelessWidget {
         physics: ScrollPhysics(), // to disable GridView's scrolling
         shrinkWrap: true,
         children: List.generate(category.length, (index) {
-          return getCategoryList(category[index]);
+          return GestureDetector(
+            onTap: () {
+              print(category[index].nameCategory);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          FoodListApp(categoryName: category[index].nameCategory)));
+            },
+            child: getCategoryList(category[index]),
+          );
         }));
   }
 }

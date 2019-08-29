@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/homemenu.dart';
-import 'package:flutter_app/vali/validation';
+import 'package:flutter_app/screen/homemenu.dart';
+import 'package:flutter_app/utils/validation';
 
-void main() {
-  runApp(MaterialApp(
-    title: 'Flutter Tutorial',
-    home: MyApp(),
-  ));
-}
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -15,7 +10,6 @@ class MyApp extends StatelessWidget {
     // Scaffold is a layout for the major Material Components.
     return MaterialApp(
       title: "Login Page",
-      theme: ThemeData(primarySwatch: Colors.blue),
       home: HomeApp(),
     );
   }
@@ -24,7 +18,6 @@ class MyApp extends StatelessWidget {
 class HomeApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _HomeAppState();
   }
 }
@@ -131,7 +124,8 @@ class _HomeAppState extends State<HomeApp> with Validation {
             print("Username : $username");
             print("Password : $password");
 
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPageApp()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SecondPageApp()));
           }
         },
         child: Text("Login",
