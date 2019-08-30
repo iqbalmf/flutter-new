@@ -23,7 +23,7 @@ class DetailMeal {
         idMeal: json['idMeal'],
         nameMeal: json['strMeal'],
         categoryMeal: json['strCategory'],
-        instructionMeal: json['strArea'],
+        instructionMeal: json['strInstructions'],
         imageMeal: json['strMealThumb'],
         tagsMeal: json['strTags'],
         linkYoutubeMeal: json['strYoutube'],
