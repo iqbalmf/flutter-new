@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class FoodApp extends StatelessWidget {
   final String categoryName;
+  static String tag = "food-detail";
 
   FoodApp({Key key, @required this.categoryName}) : super(key: key);
 
@@ -22,12 +23,12 @@ class FoodApp extends StatelessWidget {
   }
 }
 
-class food extends StatefulWidget {
+class Food extends StatefulWidget {
   @override
   _FoodState createState() => _FoodState();
 }
 
-class _FoodState extends State<food> {
+class _FoodState extends State<Food> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

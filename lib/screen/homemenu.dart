@@ -6,28 +6,22 @@ import 'package:flutter_app/view/LatestView.dart';
 import 'package:flutter_app/network.dart';
 import 'package:flutter_app/view/CategoryView.dart';
 
-class SecondPageApp extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  static String tag = "home-page";
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Food Recipe",
-      home: Secondpage(),
-    );
-  }
+  _HomePageState createState() => _HomePageState();
 }
 
-class Secondpage extends StatefulWidget {
-  @override
-  _SecondpageState createState() => _SecondpageState();
-}
-
-class _SecondpageState extends State<Secondpage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.amberAccent,
-          title: Text("Menu Meals"),
+          automaticallyImplyLeading: false,
+          title: new Center(
+            child: new Text("Menu Meals")
+          ),
         ),
         body: ListView(
           children: <Widget>[

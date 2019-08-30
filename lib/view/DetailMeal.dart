@@ -6,6 +6,7 @@ import 'package:flutter_app/network.dart';
 
 class DetailMealApp extends StatelessWidget {
   final String detailName;
+  static String tag = 'detail-page';
 
   DetailMealApp({Key key, @required this.detailName}) : super(key: key);
 

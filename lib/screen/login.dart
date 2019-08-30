@@ -2,27 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/screen/homemenu.dart';
 import 'package:flutter_app/utils/validation';
 
-
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Scaffold is a layout for the major Material Components.
-    return MaterialApp(
-      title: "Login Page",
-      home: HomeApp(),
-    );
-  }
-}
-
-class HomeApp extends StatefulWidget {
+class LoginPage extends StatefulWidget {
+  static String tag = "login-page";
   @override
   State<StatefulWidget> createState() {
-    return _HomeAppState();
+    return _LoginPageState();
   }
 }
 
-class _HomeAppState extends State<HomeApp> with Validation {
+class _LoginPageState extends State<LoginPage> with Validation {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
   final formKey = GlobalKey<FormState>();
@@ -124,8 +112,7 @@ class _HomeAppState extends State<HomeApp> with Validation {
             print("Username : $username");
             print("Password : $password");
 
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SecondPageApp()));
+            Navigator.of(context).pushNamed(HomePage.tag);
           }
         },
         child: Text("Login",

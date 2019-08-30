@@ -3,6 +3,8 @@ import 'package:flutter_app/network.dart';
 import 'package:flutter_app/view/CategoryNameView.dart';
 
 class FoodListApp extends StatelessWidget {
+
+  static String tag = "category-list";
   final String categoryName;
 
   FoodListApp({Key key, @required this.categoryName}) : super(key: key);

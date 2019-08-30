@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/categoryMeal.dart' as mealsCategory;
+import 'package:flutter_app/screen/food.dart';
+import 'package:flutter_app/screen/foodlist.dart';
 import 'package:flutter_app/view/DetailMeal.dart';
 
 class CategoryNameView extends StatelessWidget {
